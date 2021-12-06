@@ -51,6 +51,25 @@ export default function Navigation() {
                         </p>
                     </div>
                 </Link>
+                {!user && <Link href="/auth/login">
+                    <div className="big-screen-nav-button">
+                        <p>
+                            Login
+                        </p>
+                    </div>
+                </Link>}
+                {user &&
+                    <div className="big-screen-nav-button">
+                        <p>
+                            {user.displayName} is logged in
+                        </p>
+                    </div>
+                }
+                {user && <Link href="/entry/new">
+                    <div className="ml-auto bg-indigo-500 px-2 py-2 rounded-xl cursor-pointer hover:bg-indigo-400 transition text-white">
+                            Add Entry
+                    </div>
+                </Link>}
             </div>
         </div >
     )
