@@ -82,15 +82,15 @@ export default function Page() {
                                 <h3>Purchaser</h3>
                                 <Select required name="purchaser" onChange={handleChange}>
                                     <option>Select the purchaser</option>
-                                    <option value="phil">Phil</option>
-                                    <option value="milli">Milli</option>
+                                    <option value="Phil">Phil</option>
+                                    <option value="Milli">Milli</option>
                                 </Select>
                                 <h3>Recipient</h3>
                                 <Select required name="recipient" onChange={handleChange}>
                                     <option>Select the recipient</option>
-                                    <option value="phil">Phil</option>
-                                    <option value="milli">Milli</option>
-                                    <option value="both">Both</option>
+                                    <option value="Phil">Phil</option>
+                                    <option value="Milli">Milli</option>
+                                    <option value="Both">Both</option>
                                 </Select>
                                 <Button type="submit" className="mx-auto">
                                     Enter

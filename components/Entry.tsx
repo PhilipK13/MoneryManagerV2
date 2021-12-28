@@ -10,11 +10,10 @@ export default function Entry({ entry }) {
 
     return (
         <div className="flex flex-row content-evenly">
-            <a>Description: {description}</a>
-            <a>Purchaser: {purchaser}</a>
-            <a>Recipient: {recipient}</a>
-            <a>Amount: {amount}</a>
-
+            <p className='mx-2'>Description: {description}</p>
+            <p className='mx-2'>Purchaser: {purchaser}</p>
+            <p className='mx-2'>Recipient: {recipient}</p>
+            <p className='mx-2'>Amount: {amount}</p>
         </div>
     )
 }

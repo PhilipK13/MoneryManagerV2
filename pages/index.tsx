@@ -15,7 +15,7 @@ export default function Page() {
 
   //Check if Phil bought something for Milli
   function isPhil(entry) {
-    if(entry.purchaser == "phil" && entry.recipient == "milli"){
+    if(entry.purchaser == "Phil" && entry.recipient == "Milli"){
       return true;
     }
     return false;
@@ -23,7 +23,7 @@ export default function Page() {
 
   //Check if Milli bought something for Phil
   function isMilli(entry) {
-    if(entry.purchaser == "milli" && entry.recipient == "phil"){
+    if(entry.purchaser == "Milli" && entry.recipient == "Phil"){
       return true;
     }
     return false;
@@ -58,16 +58,16 @@ export default function Page() {
       {(!userLoading) && 
       <div className="flex flex-col justify-center items-center">
         <h2>Current Entries</h2>
-        <div className="flex flex-col pt-10">
-          {entries?.map(entry => (<Entry key={entry.id} entry={entry} />))}          
+        <div className="flex flex-col pt-10 mb-8 conten-evenly">
+          {entries?.map(entry => (<Entry key={entry.id} entry={entry} />))}           
         </div>
         <h2>Current Tab</h2>
         <div className="flex flex-col pt-10">
           <div className="flex flex-row">
-            Phil owes Milli{philToMilli()}
+            Phil owes Milli {philToMilli()}
           </div>
           <div className="flex flex-row">
-            Milli Owes Phil{milliToPhil()}
+            Milli Owes Phil {milliToPhil()}
           </div>
         </div>
       </div>}
