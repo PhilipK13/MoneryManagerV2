@@ -67,7 +67,12 @@ export default function Navigation() {
                 }
                 {user && <Link href="/entry/new">
                     <div className="ml-auto bg-indigo-500 px-2 py-2 rounded-xl cursor-pointer hover:bg-indigo-400 transition text-white">
-                            Add Entry
+                        Add Entry
+                    </div>
+                </Link>}
+                {user && (user.displayName == "philip kennedy" || user.displayName == "millicent ross") && <Link href="/clear/new">
+                    <div className="ml-5 bg-red-500 px-2 py-2 rounded-xl cursor-pointer hover:bg-red-400 transition text-white">
+                        Clear Entries
                     </div>
                 </Link>}
             </div>

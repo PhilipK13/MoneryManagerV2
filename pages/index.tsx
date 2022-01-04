@@ -49,25 +49,39 @@ export default function Page() {
     return total;
   }
 
+  const finalTotal = () => {
+    var total = 0;
+    if(milliToPhil() > philToMilli())
+    {
+      total = milliToPhil() - philToMilli();
+      return ("Milli owes Phil $" + total + ".");
+    } else if (philToMilli() > milliToPhil())
+    {
+      total = philToMilli() - milliToPhil();
+      return ("Phil owes Milli $" + total + ".");
+    }else
+    {
+      return "Even steven."
+    }
+
+  }
+
   return (
     <div className="flex flex-col">
       <div className="flex align-center justify-center my-10">
-        <h1 >Money Manager</h1>
+        <h1>Money Manager</h1>
       </div>
       {(userLoading || entriesLoading) && <Loading className="w-16 h-16 animate-spin mx-auto mt-12" />}
       {(!userLoading) && 
       <div className="flex flex-col justify-center items-center">
         <h2>Current Entries</h2>
-        <div className="flex flex-col pt-10 mb-8 conten-evenly">
+        <div className="flex flex-col pt-10 mb-8 content-evenly">
           {entries?.map(entry => (<Entry key={entry.id} entry={entry} />))}           
         </div>
         <h2>Current Tab</h2>
         <div className="flex flex-col pt-10">
           <div className="flex flex-row">
-            Phil owes Milli {philToMilli()}
-          </div>
-          <div className="flex flex-row">
-            Milli Owes Phil {milliToPhil()}
+            {finalTotal()}
           </div>
         </div>
       </div>}
