@@ -56,7 +56,6 @@ export default function MyApp({ Component, pageProps }) {
         <meta name="theme-color" content="#fcfcfc" />
       </Head>
       <div className="bg-white dark:bg-black text-black dark:text-white min-h-screen bg-opacity-50 h-screen pb-16 sm:pb-0 flex flex-col">
-        <Navigation />
         <Component {...pageProps} />
       </div>
     </>

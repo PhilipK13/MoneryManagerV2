@@ -4,88 +4,33 @@ import { Loading } from "@components/Icons";
 import { getAuth } from "@firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Entry from '@components/Entry';
+import Link from "next/link";
 
 export default function Page() {
 
-  const db = getFirestore();
   const auth = getAuth();
-  const [entries, entriesLoading] = useCollectionData(query(collection(db, "transactions")), { idField: "id" });
   const [user, userLoading] = useAuthState(auth);
-
-
-  //Check if Phil bought something for Milli
-  function isPhil(entry) {
-    if(entry.purchaser == "Phil" && entry.recipient == "Milli"){
-      return true;
-    }
-    return false;
-  }
-
-  //Check if Milli bought something for Phil
-  function isMilli(entry) {
-    if(entry.purchaser == "Milli" && entry.recipient == "Phil"){
-      return true;
-    }
-    return false;
-  }
-
-  //Amount that Phil owes to Milli
-  const philToMilli = () => {
-    var total = 0;
-    if(entriesLoading) return;
-    entries.filter(isMilli).forEach(entry => {
-      total += +entry.amount;
-    });
-    return total;
-  }
-
-  //Amount that Milli owes to Phil
-  const milliToPhil = () => {
-    var total = 0;
-    if(entriesLoading) return;
-    entries.filter(isPhil).forEach(entry => {
-      total += +entry.amount;
-    });
-    return total;
-  }
-
-  const finalTotal = () => {
-    var total = 0;
-    if(milliToPhil() > philToMilli())
-    {
-      total = milliToPhil() - philToMilli();
-      return ("Milli owes Phil $" + total + ".");
-    } else if (philToMilli() > milliToPhil())
-    {
-      total = philToMilli() - milliToPhil();
-      return ("Phil owes Milli $" + total + ".");
-    }else
-    {
-      return "Even steven."
-    }
-
-  }
-
+  
   return (
-    
-    <div className="flex flex-col">
-      <div className="flex align-center justify-center my-10">
-        <h1>Money Manager</h1>
-      </div>
-      {(userLoading || entriesLoading) && <Loading className="w-16 h-16 animate-spin mx-auto mt-12" />}
-      {(!userLoading) && 
-      <div className="flex flex-col justify-center items-center">
-        <h2>Current Entries</h2>
-        <div className="flex flex-col pt-10 mb-8 content-evenly">
-          {entries?.map(entry => (<Entry key={entry.id} entry={entry} />))}           
+    <div className='flex font-sans'>
+      <div className='flex-1 flex flex-col items-center justify-cente uppercase relative top-1'>
+        <div>
+          <p className='text-2xl text-black font-light tracking-wide relative top-1'>Philip Kennedy</p>
         </div>
-        <h2>Current Tab</h2>
-        <div className="flex flex-col pt-10">
-          <div className="flex flex-row">
-            {finalTotal()}
+        <p className='text-4 text-black font-light tracking-wide relative -top-3'>Student - Developer - Father (of 2 cats)</p>
+        {<Link href="/home/home">
+          <div className="m-auto bg-indigo-500 px-2 py-2 rounded-xl cursor-pointer hover:bg-indigo-400 transition text-white">
+              Personal Site
           </div>
-        </div>
-      </div>}
+        </Link>}
+        {user && <Link href="/money/money">
+          <div className="m-auto bg-indigo-500 px-2 py-2 rounded-xl cursor-pointer hover:bg-indigo-400 transition text-white">
+              Money Manger
+          </div>
+        </Link>}
+      </div>
     </div>
+
+    
   )
 }
