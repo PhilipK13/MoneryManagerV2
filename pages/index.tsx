@@ -67,6 +67,7 @@ export default function Page() {
   }
 
   return (
+    
     <div className="flex flex-col">
       <div className="flex align-center justify-center my-10">
         <h1>Money Manager</h1>
