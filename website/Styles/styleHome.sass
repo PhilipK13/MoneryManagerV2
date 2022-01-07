@@ -1,0 +1,564 @@
+$bright_blue: rgba(35, 183, 246, 0.7)
+$blue: rgba(101, 200, 255, 1)
+$white: rgba(254,255,250,1)
+$fadedWhite: #fefffacb
+$grey: #a5acae
+$darkGrey: #919798
+$black: rgba(22, 33, 43, 0.8)
+$sans: 'Titillium Web', sans-serif
+
+@mixin centerize
+    display: flex
+    justify-content: center
+    align-items: center
+
+@mixin direction
+    flex-direction: row
+    @media only screen and (max-width: 897px)
+        flex-direction: column
+
+html
+    overflow-y: scroll
+    scrollbar-width: none
+
+body
+    padding: 0
+    margin: 0
+    font-family: $sans
+    -ms-overflow-style: none
+    overflow-y: scroll
+    scrollbar-width: none
+
+body::-webkit-scrollbar
+    display: none
+
+h1
+    margin: 0
+h2
+    margin: 0
+h3
+    margin: 0
+
+#highlight
+    color: $blue
+
+.shadow_bar
+    background-image: linear-gradient($grey, $white)
+    width: 100%
+    height: 0.7rem
+
+.line
+    width: 90%
+    margin: 4rem 0 5rem 0
+    border-top-width: 4px
+    border-top-style: solid
+    border-color: $blue
+.thin_line
+    width: 90%
+    margin: 2rem 0 3rem 0
+    border-top-width: 2px
+    border-top-style: solid
+    border-color: $blue
+
+.main_container
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-flow: column
+    width: 100%
+    overflow-x: clip
+    .header_container
+        display: flex
+        font-family: $sans
+        background-color: $blue
+        flex-direction: row
+        flex-wrap: no-wrap
+        width: 100%
+        padding-bottom: 1rem
+        box-shadow: 0px
+        justify-content: center
+        .header_left_col
+            display: flex
+            justify-content: end
+            flex-direction: column
+            text-align: left
+            flex-basis: 10%
+            flex-grow: 1
+            margin: 0em 0em 0.5em 3em
+            /*width: 100%
+            a
+                font-size: 20px
+                color: $black
+                font-weight: 500
+                letter-spacing: 2px
+                margin: 0
+                text-decoration: underline
+                transition: color 0.4s ease-in-out, border-color 0.5s ease-in-out, text-shadow 0.1s ease-in-out
+                &:hover
+                    color: $fadedWhite
+
+        .header_center_col
+            @include centerize
+            flex-direction: column
+            text-align: center
+            flex-basis: 80%
+            margin: 0em 1.5em 0em 1.5em
+            h1
+                font-size: 64px
+                color: $black
+                font-weight: 300
+                letter-spacing: 2px
+                margin-top: 2rem
+                margin-bottom: 0.5rem
+            h3
+                font-size: 15px
+                color: $black
+                font-weight: 300
+                letter-spacing: 2px
+                margin: 0
+        .header_right_col
+            display: flex
+            justify-content: end
+            flex-direction: column
+            text-align: right
+            flex-basis: 10%
+            flex-grow: 1
+            margin: 0em 3em 0.5em 0em
+            /*width: 100%
+            a
+                font-size: 20px
+                color: $black
+                font-weight: 500
+                letter-spacing: 2px
+                margin: 0
+                text-decoration: underline
+                transition: color 0.4s ease-in-out, border-color 0.5s ease-in-out, text-shadow 0.1s ease-in-out
+                &:hover
+                    color: $fadedWhite
+
+    .about_container
+        flex: 1
+        display: flex
+        flex-direction: column
+        width: 100%
+        align-items: center
+        .about_header_container
+            display: flex
+            flex-direction: column
+            width: 100%
+            align-items: left
+            h2
+                font-size: 32px
+                color: $black
+                font-weight: 300
+                letter-spacing: 2px
+                position: relative
+                padding: 2rem 0rem 1rem 5rem
+        .about_content_container
+            @include centerize
+            width: 90%
+            background: #DFE4E7
+            border-radius: 28px
+            box-shadow: 0px 3px $grey
+            .about_content_main
+                display: flex
+                flex: 1
+                width: 100%
+                flex-direction: column
+                align-items: center
+                .description
+                    display: flex
+                    @include direction
+                    align-items: center
+                    justify-content: center
+                    p
+                        flex: 2
+                        text-align: center
+                        padding-right: 4rem
+                        font-size: 16px
+                        color: $black
+                        font-weight: 300
+                        letter-spacing: 2px
+                        line-height: 2
+                        @media only screen and (max-width: 897px)
+                            margin: 3rem 3rem 0rem 3rem
+                            padding-right: 0rem
+                    div
+                        flex: 1
+                        margin: 2rem 2rem 0rem 4rem
+                        @media only screen and (max-width: 897px)
+                            margin: 2rem 3rem 0rem 3rem
+                        img
+                            max-width: 350px
+                            border: solid 1px $blue
+                .hobbies_content_container
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    width: 100%
+                    .hobbies_header_container
+                        display: flex
+                        flex-direction: row
+                        width: 100%
+                        align-items: center
+                        justify-content: center
+                        h1
+                            text-align: center
+                            font-size: 28px
+                            color: $black
+                            font-weight: 300
+                            letter-spacing: 2px
+                            margin-bottom: 1.5rem
+                    .hobbies_content_widget
+                        display: flex
+                        flex-direction: row
+                        align-items: center
+                        justify-content: center
+                        margin: 2rem 2rem 0rem 2rem
+                        img
+                            max-width: 100px
+                            margin: 0rem 8rem 0rem 8rem
+                            @media only screen and (max-width: 897px)
+                                margin: 0rem 2rem 0rem 2rem
+                            @media only screen and (max-width: 529px)
+                                margin: 0rem 1rem 0rem 1rem
+                        p
+                            text-align: center
+                            margin: 0rem 8rem 0rem 8rem
+                            font-size: 16px
+                            color: $black
+                            font-weight: 300
+                            letter-spacing: 2px
+                            line-height: 2
+                            @media only screen and (max-width: 897px)
+                                margin: 0rem 2rem 0rem 2rem
+                            @media only screen and (max-width: 529px)
+                                margin: 0rem 1rem 0rem 1rem
+
+                .about_content_footer
+                    display: flex
+                    flex-direction: row
+                    align-items: center
+                    justify-content: center
+                    width: 100%
+                    flex-wrap: wrap-reverse
+                    margin: 3rem 1rem 2rem 0
+                    .about_footer_widget
+                        display: flex
+                        flex-basis: 30%
+                        flex-direction: row
+                        justify-content: center
+                        margin: 0rem 1rem 0 1rem
+                        .icon
+                            width: 50px
+                            height: 50px
+                            margin: 0 1rem 0 1rem
+                        p
+                            font-size: 16px
+                            color: $black
+                            font-weight: 300
+                            letter-spacing: 2px
+                            line-height: 2
+                    #git
+                        flex: 1
+                        order: 1
+                    #linkedin
+                        flex: 1
+                        order: 3
+                        @media only screen and (max-width: 897px)
+                            order: 2
+                        @media only screen and (max-width: 487px)
+                            order: 3
+                    #email
+                        flex: 1
+                        order: 2
+                        @media only screen and (max-width: 897px)
+                            order: 3
+                        @media only screen and (max-width: 487px)
+                            order: 2
+
+    .technical_skills_container
+        flex: 1
+        display: flex
+        flex-direction: column
+        width: 100%
+        align-items: center
+        .technical_skills_header_container
+            display: flex
+            flex-direction: column
+            width: 100%
+            align-items: left
+            h2
+                font-size: 32px
+                color: $black
+                font-weight: 300
+                letter-spacing: 2px
+                position: relative
+                padding: 2rem 0rem 1rem 5rem
+        .technical_skills_main_container
+            display: flex
+            flex-wrap: wrap
+            width: 90%
+            align-items: center
+            justify-content: center
+            .skill_content_widget
+                display: flex
+                flex-direction: row
+                flex-basis: 20rem
+                align-items: center
+                justify-content: center
+                padding: 1rem 0 1rem 0
+                .skillImg
+                    width: 20%
+                    padding-right: 1rem
+                    padding-left: 1rem
+                .skillBarOuter
+                    flex-basis: 80%
+                    background: $white
+                    border: 1px solid #000000
+                    box-sizing: border-box
+                    border-radius: 10px
+                    div
+                        height: 20px
+                        background: #65C8FF
+                        border-radius: 9px
+                    #figma
+                        width: 80%
+                    #html
+                        width: 90%
+                    #css
+                        width: 85%
+                    #react
+                        width: 50%
+                    #js
+                        width: 35%
+                    #c
+                        width: 75%
+                    #git
+                        width: 100%
+                    #office
+                        width: 80%
+
+    .experience_container
+        flex: 1
+        display: flex
+        flex-direction: column
+        width: 100%
+        align-items: center
+        .experience_header_container
+            display: flex
+            flex-direction: column
+            width: 100%
+            align-items: left
+            h2
+                font-size: 32px
+                color: $black
+                font-weight: 300
+                letter-spacing: 2px
+                position: relative
+                padding: 2rem 0rem 1rem 5rem
+        .experience_content_container
+            display: flex
+            flex-wrap: wrap
+            width: 100%
+            align-items: center
+            justify-content: center
+            .experience_content_widget
+                display: flex
+                flex-direction: column
+                flex-basis: 40%
+                flex-grow: 1
+                min-height: 300px
+                align-items: left
+                justify-content: space-evenly
+                background: #DFE4E7
+                border-radius: 28px
+                box-shadow: 0px 3px $grey
+                padding: 1rem 1rem 1rem 1rem
+                margin: 1rem 2rem 0rem 2rem
+                h2
+                    font-size: 24px
+                    color: $black
+                    font-weight: 500
+                    letter-spacing: 2px
+                    position: relative
+                    padding: 0.5rem 1rem 0.5rem 1rem
+                h3
+                    font-size: 20px
+                    color: $blue
+                    font-weight: 300
+                    letter-spacing: 2px
+                    position: relative
+                    padding: 0.5rem 1rem 0.5rem 1rem
+                p
+                    font-size: 16px
+                    color: $black
+                    font-weight: 300
+                    letter-spacing: 2px
+                    position: relative
+                    padding: 0.5rem 1rem 0rem 1rem
+                #date
+                    text-align: right
+                    font-size: 12px
+                    color: $grey
+                    font-weight: 300
+                    letter-spacing: 2px
+                    position: relative
+
+    .education_container
+        flex: 1
+        display: flex
+        flex-direction: column
+        width: 100%
+        align-items: center
+        .education_header_container
+            display: flex
+            flex-direction: column
+            width: 100%
+            align-items: left
+            h2
+                font-size: 32px
+                color: $black
+                font-weight: 300
+                letter-spacing: 2px
+                position: relative
+                padding: 2rem 0rem 1rem 5rem
+        .education_content_container
+            display: flex
+            flex-wrap: wrap
+            width: 100%
+            align-items: center
+            justify-content: center
+            .education_content_widget
+                display: flex
+                flex-direction: column
+                flex-basis: 40%
+                flex-grow: 1
+                align-items: left
+                background: #DFE4E7
+                border-radius: 28px
+                box-shadow: 0px 3px $grey
+                padding: 1rem 1rem 1rem 1rem
+                margin: 1rem 2rem 0rem 2rem
+                h2
+                    font-size: 24px
+                    color: $black
+                    font-weight: 500
+                    letter-spacing: 2px
+                    position: relative
+                    padding: 0.5rem 1rem 0.5rem 1rem
+                h3
+                    font-size: 20px
+                    color: $blue
+                    font-weight: 300
+                    letter-spacing: 2px
+                    position: relative
+                    padding: 0rem 1rem 0rem 1rem
+                p
+                    font-size: 16px
+                    color: $black
+                    font-weight: 300
+                    letter-spacing: 2px
+                    position: relative
+                    padding: 0.5rem 1rem 0rem 1rem
+                .widget_bottom_row
+                    display: flex
+                    flex-direction: row
+                    justify-content: left
+                    align-items: center
+                    h3
+                        font-size: 18px
+                        color: $blue
+                        font-weight: 300
+                        letter-spacing: 2px
+                        position: relative
+                    p
+                        font-size: 16px
+                        font-weight: 500
+                        flex-basis: 80%
+                        line-height: 1.8em
+                    img
+                        max-height: 100px
+
+    .footer_container
+        margin-top: 10rem
+
+/* Unity styling stuff*/
+
+#unity-container
+    display: flex
+    flex: 1
+    width: 100%
+    justify-content: center
+    align-items: center
+
+    &.unity-desktop
+
+    &.unity-mobile
+        width: 100%
+        height: 100%
+
+#unity-canvas
+    background: #231f20
+
+    .unity-mobile &
+        width: 100%
+        height: 100%
+
+#unity-loading-bar
+    position: relative
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    display: none
+
+#unity-logo
+    width: 154px
+    height: 130px
+    background: url("unity-logo-dark.png") no-repeat center
+
+#unity-progress-bar-empty
+    width: 141px
+    height: 18px
+    margin-top: 10px
+    background: url("progress-bar-empty-dark.png") no-repeat center
+
+#unity-progress-bar-full
+    width: 0%
+    height: 18px
+    margin-top: 10px
+    background: url("progress-bar-full-dark.png") no-repeat center
+
+#unity-footer
+    position: relative
+
+    .unity-mobile &
+        display: none
+
+#unity-webgl-logo
+    float: left
+    width: 204px
+    height: 38px
+    background: url("webgl-logo.png") no-repeat center
+
+#unity-build-title
+    float: right
+    margin-right: 10px
+    line-height: 38px
+    font-family: arial
+    font-size: 18px
+
+#unity-fullscreen-button
+    float: right
+    width: 38px
+    height: 38px
+    background: url("fullscreen-button.png") no-repeat center
+
+#unity-mobile-warning
+    position: absolute
+    left: 50%
+    top: 5%
+    transform: translate(-50%)
+    background: white
+    padding: 10px
+    display: none

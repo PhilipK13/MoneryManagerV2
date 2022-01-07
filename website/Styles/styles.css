@@ -1,0 +1,82 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-image: url("/Assets/darkPossibleBackground.jpeg");
+  background-position: center;
+}
+
+.container-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.container-name-link {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: uppercase;
+  position: relative;
+  top: 1em;
+}
+
+.container-name-link p {
+  font-size: 120px;
+  color: #fefffa;
+  font-weight: 300;
+  letter-spacing: 2px;
+  position: relative;
+  top: 0.3em;
+}
+
+.container-name-link p1 {
+  font-size: 15px;
+  color: #fefffa;
+  font-weight: 300;
+  letter-spacing: 2px;
+  position: relative;
+  top: -5.5em;
+}
+
+.container-name-link a {
+  background: transparent;
+  background-color: transparent;
+  padding-top: 1em;
+  padding-right: calc(1.44em - 2px);
+  padding-bottom: 1em;
+  padding-left: 1.44em;
+  border: 2px solid #fefffa;
+  cursor: pointer;
+  color: #fefffa;
+  letter-spacing: 3px;
+  font-weight: 300;
+  font-size: 16px;
+  text-decoration: none;
+  -webkit-transition: color 0.4s ease-in-out, border-color 0.5s ease-in-out, text-shadow 0.1s ease-in-out;
+  transition: color 0.4s ease-in-out, border-color 0.5s ease-in-out, text-shadow 0.1s ease-in-out;
+}
+
+.container-name-link a:hover {
+  background-color: #fefffa;
+  border-color: transparent;
+  color: rgba(48, 69, 92, 0.8);
+  text-shadow: 0.05em 0.05em black;
+}
+/*# sourceMappingURL=styles.css.map */
