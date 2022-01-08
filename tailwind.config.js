@@ -1,21 +1,24 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  mode: 'jit',
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   darkMode: 'class',
   theme: {
-    fontFamily: {
-      'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
-    },
     extend: {
+      fontFamily: {
+        'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
+      },
       colors: {
-        gray: colors.trueGray
+        gray: colors.neutral,
+        customWhite: '#f1faee',
+        customLightBlue: '#a8dadc',
+        customBlue: '#457b9d',
+        customDarkBlue: '#1d3557'
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 }

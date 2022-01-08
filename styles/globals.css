@@ -6,22 +6,22 @@
   h1 {
     @apply text-5xl;
     @apply md:text-5xl;
-    @apply font-bold;
+    @apply font-sans
   }
   h2 {
     @apply text-4xl;
     @apply md:text-4xl;
-    @apply font-semibold;
+    @apply font-sans
   }
   h3 {
     @apply text-3xl;
     @apply md:text-2xl;
-    @apply font-semibold;
+    @apply font-sans
   }
   h4 {
     @apply text-2xl;
     @apply md:text-xl;
-    @apply font-light;
+    @apply font-sans
   }
 
   .small-screen-nav-button {

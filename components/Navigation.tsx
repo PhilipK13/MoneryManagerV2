@@ -29,20 +29,17 @@ export default function Navigation() {
                 <div className="fixed bottom-0 left-0 right-0 shadow-center-md flex justify-evenly items-center">
                     <Link href="/">
                         <div className="small-screen-nav-button">
-                            <Home className="small-screen-nav-button-icon" />
+                            <Home href="/home/home" className="small-screen-nav-button-icon" />
                         </div>
                     </Link>
                     {!user && <Link href="/auth/login">
                         <div className="small-screen-nav-button">
                             <Login className="small-screen-nav-button-icon" />
                         </div>
-                    </Link>}
-                    <div className="small-screen-nav-button">
-                        <Menu className="small-screen-nav-button-icon" onClick={() => setMenuOpen(true)} />
-                    </div>
+                    </Link>}                    
                 </div>
             </div>
-            <div className="hidden md:flex relative z-30 justify-start bg-white  dark:bg-black w-full px-6 gap-6 items-center">
+            <div className="hidden md:flex relative z-30 justify-start bg-white  dark:bg-black w-screen px-6 gap-6 items-center">
                 <Menu className="w-6 h-6 cursor-pointer primary-hover" onClick={() => setMenuOpen(true)} />
                 <Link href="/">
                     <div className="big-screen-nav-button">
