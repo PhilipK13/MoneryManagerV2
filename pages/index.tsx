@@ -18,21 +18,21 @@ export default function Page() {
   return (
       <div className='bg-customWhite h-screen'>
         <Navigation/>
-        <div className='md:hidden'>
-            <div className='flex flex-col items-center my-20'>
-                <div className='text-customBlue'>
+        <div className='md:hidden flex flex-col items-center'>
+            <div className='flex flex-col items-center mt-40'>
+                <div className='text-customBlue XL-text'>
                     <h1>Philip Kennedy</h1>
                 </div>
-                <div className='text-customBlue'>
+                <div className='text-customBlue L-text my-12'>
                     <h4>Student - Developer - Father (of 2 cats)</h4>
                 </div>
             </div>
-            <div className=''>
-                Personal Site
+            <div className='mt-32 bg-customDarkBlue px-5 py-3 rounded-xl'>
+                <a className='M-text text-customWhite'>Personal Site</a>
             </div>
-            
-                
-            
+            {user && (user.displayName == "philip kennedy" || user.displayName == "Milli Ross") && <div className='mt-12 bg-customDarkBlue px-5 py-3 rounded-xl'>
+                <a className='M-text text-customWhite'>Money Manager</a>
+            </div>}
         </div>
       </div>
     // <div className='flex font-sans'>

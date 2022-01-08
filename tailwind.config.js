@@ -13,9 +13,9 @@ module.exports = {
       },
       colors: {
         gray: colors.neutral,
+        customBlue: '#457b9d',
         customWhite: '#f1faee',
         customLightBlue: '#a8dadc',
-        customBlue: '#457b9d',
         customDarkBlue: '#1d3557'
       },
     },

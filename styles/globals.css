@@ -3,25 +3,16 @@
 @tailwind utilities;
 
 @layer base {
-  h1 {
-    @apply text-5xl;
-    @apply md:text-5xl;
-    @apply font-sans
+  .XL-text {
+    @apply text-5xl md:text-5xl font-sans;
   }
-  h2 {
-    @apply text-4xl;
-    @apply md:text-4xl;
-    @apply font-sans
+
+  .L-text {
+    @apply text-2xl md:text-xl font-sans
   }
-  h3 {
-    @apply text-3xl;
-    @apply md:text-2xl;
-    @apply font-sans
-  }
-  h4 {
-    @apply text-2xl;
-    @apply md:text-xl;
-    @apply font-sans
+  
+  .M-text {
+    @apply text-xl md:text-lg font-sans
   }
 
   .small-screen-nav-button {

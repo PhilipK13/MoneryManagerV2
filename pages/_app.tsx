@@ -54,8 +54,9 @@ export default function MyApp({ Component, pageProps }) {
         />
         <link rel="apple-touch-icon" href="/apple-icon.png"></link>
         <meta name="theme-color" content="#fcfcfc" />
+        {(process.env.NODE_ENV == "development") && <script src="https://cdn-tailwindcss.vercel.app/"></script>}
       </Head>
-      <div className="bg-white dark:bg-black text-black dark:text-white min-h-screen bg-opacity-50 h-screen pb-16 sm:pb-0 flex flex-col">
+      <div className="bg-white min-h-screen bg-opacity-50 h-screen pb-16 sm:pb-0 flex flex-col">
         <Component {...pageProps} />
       </div>
     </>
