@@ -2,17 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
 @layer base {
   .XL-text {
-    @apply text-5xl md:text-5xl font-sans;
+    @apply text-5xl md:text-5xl font-sans text-cBlue;
   }
 
   .L-text {
-    @apply text-2xl md:text-xl font-sans
+    @apply text-2xl md:text-xl font-sans text-cBlue
   }
   
   .M-text {
-    @apply text-xl md:text-lg font-sans
+    @apply text-xl md:text-lg font-sans text-cBlue
   }
 
   .small-screen-nav-button {
@@ -28,7 +36,7 @@
   }
 
   .primary-hover {
-    @apply hover:text-gray-700 transition dark:hover:text-gray-300 cursor-pointer;
+    @apply hover:text-gray-700 transition cursor-pointer;
   }
 }
 
@@ -41,5 +49,17 @@
   }
   .shadow-center-lg {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  @variants responsive {
+    /* Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
   }
 }

@@ -7,6 +7,7 @@ import RequireAuth from '@components/RequireAuth';
 import { useRouter } from 'next/router';
 import { Loading } from '@components/Icons';
 import { addDoc, collection, getFirestore, updateDoc } from '@firebase/firestore';
+import Navigation from '@components/Navigation';
 
 export default function Page() {
     const storage = getStorage();
@@ -46,7 +47,7 @@ export default function Page() {
             setSuccess(true);
 
             setTimeout(() => {
-                router.push("/");
+                router.push("/money/money");
             }, 1000);
 
         } catch (e) {
@@ -64,9 +65,10 @@ export default function Page() {
 
 
     return (
-        <RequireAuth>
+        <div className='bg-cWhite h-screen pb-0'>
+            <Navigation/>
             <div className="flex justify-center items-center p-2 h-full">
-                <div className="dark:bg-gray-900 rounded-xl p-3 sm:p-8 bg-white shadow-center-md w-full max-w-lg">
+                <div className="rounded-xl p-8 bg-white shadow-center-md w-full max-w-lg">
                     {success &&
                         <div>
                             <h2 className="text-center font-normal">Upload Successful</h2>
@@ -75,26 +77,42 @@ export default function Page() {
                     }
                     {!success &&
                         <div>
-                            <h2 className="mb-8 text-center font-light">New Entry</h2>
-                            <form className="flex flex-col" onSubmit={handleSubmit}>
-                                <TextArea value={form.description} onChange={handleChange} name="description" placeholder="Description" />
-                                <Input type="number" value={form.amount} onChange={handleChange} name="amount" placeholder="Cost of item" />
-                                <h3>Purchaser</h3>
-                                <Select required name="purchaser" onChange={handleChange}>
-                                    <option>Select the purchaser</option>
-                                    <option value="Phil">Phil</option>
-                                    <option value="Milli">Milli</option>
-                                </Select>
-                                <h3>Recipient</h3>
-                                <Select required name="recipient" onChange={handleChange}>
-                                    <option>Select the recipient</option>
-                                    <option value="Phil">Phil</option>
-                                    <option value="Milli">Milli</option>
-                                    <option value="Both">Both</option>
-                                </Select>
-                                <Button type="submit" className="mx-auto">
-                                    Enter
-                                </Button>
+                            <h3 className="text-center XL-text mb-8">New Entry</h3>
+                            <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
+                                <div className='flex flex-row' >
+                                    <h1 className='M-text w-40'>Description</h1>
+                                    <Input className="flex-1" type="character" value={form.description} onChange={handleChange} name="description" placeholder="" />
+                                </div>
+                                <div className='flex flex-row' >
+                                    <h1 className='M-text w-40'>Cost</h1>
+                                    <Input className="flex-1" type="number" value={form.amount} onChange={handleChange} name="amount" placeholder="" />
+                                </div>
+                                <div className='flex flex-row w-full' >
+                                    <h1 className='M-text w-40'>Purchaser</h1>
+                                    <Select className='flex-1' required name="purchaser" onChange={handleChange}>
+                                        <option>Select the purchaser</option>
+                                        <option value="Phil">Phil</option>
+                                        <option value="Milli">Milli</option>
+                                    </Select>
+                                </div>
+                                <div className='flex flex-row' >
+                                    <h1 className='M-text w-40'>Recepient</h1>
+                                    <Select className='flex-1' required name="recipient" onChange={handleChange}>
+                                        <option>Select the recipient</option>
+                                        <option value="Phil">Phil</option>
+                                        <option value="Milli">Milli</option>
+                                        <option value="Both">Both</option>
+                                    </Select>
+                                </div>
+                                <div className='flex items-center justify-center'>
+                                    <div className='flex w-40' >
+                                        <Button type="submit" className="flex-1 text-white L-text bg-cDarkBlue text-center rounded-md hover:bg-cBlue transitionx" buttonClass="py-2 w-full">
+                                            Enter
+                                        </Button>
+                                    </div>
+                                </div>
+                                
+                                
                             </form>
                             {empty && 
                             <div className="text-center">
@@ -107,6 +125,7 @@ export default function Page() {
                     }
                 </div>
             </div>
-        </RequireAuth>
+        </div>
+    
     )
 }

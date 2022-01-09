@@ -5,3 +5,4 @@ export { IoCloseOutline as Close } from 'react-icons/io5';
 export {FcGoogle as Google} from 'react-icons/fc';
 export { GrImage as Image } from 'react-icons/gr';
 export { BsArrowUpCircle as ArrowUp, BsArrowDownCircle as ArrowDown } from 'react-icons/bs';
+export { FiTrash2 as Trash} from 'react-icons/fi';

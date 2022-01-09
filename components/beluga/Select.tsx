@@ -7,7 +7,7 @@ export interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElemen
 }
 
 const styles: any = {
-    default: "pr-8 focus:border-indigo-300 text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900 rounded-md w-full border border-gray-300 dark:border-gray-700 py-2 px-2",
+    default: "pr-8 focus:border-cBlue text-gray-800 bg-white rounded-md border border-cDarkBlue py-2 px-2",
     disabled: "filter brightness-50"
 }
 export default function Select(props: SelectProps) {
@@ -26,12 +26,12 @@ export default function Select(props: SelectProps) {
     };
 
     return (
-        <div className={`relative flex items-center ${props.disabled && styles.disabled}`}>
+        <div className={`relative w-full flex items-center ${props.className} ${props.disabled && styles.disabled}`}>
             <select
                 {...props}
                 onClick={onClick}
                 onBlur={onBlur}
-                className={`w-full ${styles.default} ${overrides} flex-1 py-1 px-1`}
+                className={`${styles.default} ${overrides} flex-1 py-1 px-1`}
             >
                 {props.children}
             </select>

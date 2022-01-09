@@ -1,6 +1,7 @@
 import React from "react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    buttonClass: any;
     variant?: "default" | "blank" | "filled" | "gray";
     error?: boolean;
 }
@@ -9,7 +10,7 @@ const overrides = `focus:ring-0 focus:outline-none appearance-none`;
 
 const styles: any = {
     default: {
-        style: "text-white bg-indigo-500 rounded-md py-1.5 px-6 hover:bg-indigo-400 transition",
+        style: "text-white bg-cDarkBlue rounded-md py-1.5 px-6 hover:bg-cBlue transition",
         error: "border border-red-500 flex items-center gap-2 justify-center",
         disabled: "filter brightness-50"
     },
@@ -26,15 +27,22 @@ const styles: any = {
 
 export default function Button(props: ButtonProps) {
 
+    // ${overrides} ${styles[variant].style} ${props?.error && styles[variant].error} ${props?.disabled && styles[variant].disabled}
     const { variant = "default" } = props;
-    const className = `${props.className} ${overrides} ${styles[variant].style} ${props?.error && styles[variant].error} ${props?.disabled && styles[variant].disabled}`;
+    const className = `${props.className}`;
+    const buttonClass = `${props.buttonClass}`;
+
     return (
+        <div className={className}>
         <button
             {...props}
-            className={className}
+            className={buttonClass}
             type={props.type ?? "button"}
         >
             {props.children}
         </button>
+        </div>
+        
+
     );
 };

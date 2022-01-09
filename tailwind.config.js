@@ -12,11 +12,12 @@ module.exports = {
         'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
       },
       colors: {
-        gray: colors.neutral,
-        customBlue: '#457b9d',
-        customWhite: '#f1faee',
-        customLightBlue: '#a8dadc',
-        customDarkBlue: '#1d3557'
+        cBlue: '#457b9d',
+        cDarkBlue: '#1d3557',
+        cLightBlue: '#a8dadc',
+        cWhite: '#f1faee',
+        cLightWhite: '#ffffff'
+        
       },
     },
   },

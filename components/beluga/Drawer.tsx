@@ -37,7 +37,7 @@ export default function Drawer({ children, onClose }: DrawerProps) {
             onMouseDown={handleEvent}
             onTouchEnd={handleEvent}
         >
-            <motion.div className="bg-white dark:bg-gray-900 w-max h-screen p-2" animate={controls} initial={{ x: "100%" }} transition={{
+            <motion.div className="bg-white w-max h-screen p-2" animate={controls} initial={{ x: "100%" }} transition={{
                 type: "spring",
                 damping: 40,
                 stiffness: 500,

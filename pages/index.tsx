@@ -16,23 +16,29 @@ export default function Page() {
   const [menuOpen, setMenuOpen] = useState(false);
   
   return (
-      <div className='bg-customWhite h-screen'>
+      <div className='bg-cWhite h-screen'>
         <Navigation/>
         <div className='md:hidden flex flex-col items-center'>
             <div className='flex flex-col items-center mt-40'>
-                <div className='text-customBlue XL-text'>
+                <div className='text-cBlue XL-text'>
                     <h1>Philip Kennedy</h1>
                 </div>
-                <div className='text-customBlue L-text my-12'>
+                <div className='text-cBlue L-text my-12'>
                     <h4>Student - Developer - Father (of 2 cats)</h4>
                 </div>
             </div>
-            <div className='mt-32 bg-customDarkBlue px-5 py-3 rounded-xl'>
-                <a className='M-text text-customWhite'>Personal Site</a>
-            </div>
-            {user && (user.displayName == "philip kennedy" || user.displayName == "Milli Ross") && <div className='mt-12 bg-customDarkBlue px-5 py-3 rounded-xl'>
-                <a className='M-text text-customWhite'>Money Manager</a>
-            </div>}
+            <Link href="/home/home">
+                <div className='mt-32 bg-cDarkBlue px-5 py-3 rounded-xl cursor-pointer hover:border-blue-500 hover:border-2 hover:-mb-1 transition'>
+                    <a className='M-text text-cWhite'>Personal Site</a>
+                </div>
+            </Link>
+            {user && (user.displayName == "philip kennedy" || user.displayName == "Milli Ross") && <Link href="/money/money">
+                <div className='mt-12 bg-cDarkBlue px-5 py-3 rounded-xl cursor-pointer hover:border-blue-500 hover:border-2 transition'>
+                    <a className='M-text text-cWhite'>Money Manager</a>
+                </div>
+            </Link>}
+            
+            
         </div>
       </div>
     // <div className='flex font-sans'>

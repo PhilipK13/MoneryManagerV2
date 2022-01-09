@@ -55,7 +55,7 @@ export default function Page() {
     return (
         <RequireAuth>
             <div className="flex justify-center items-center p-2 h-full">
-                <div className="dark:bg-gray-900 rounded-xl p-3 sm:p-8 bg-white shadow-center-md w-full max-w-lg">
+                <div className="rounded-xl p-3 sm:p-8 bg-white shadow-center-md w-full max-w-lg">
                     {success &&
                         <div>
                             <h2 className="text-center font-normal">Entries Cleared</h2>
@@ -66,7 +66,7 @@ export default function Page() {
                         <div>
                             <h2 className="mb-8 text-center font-light">Clear Entries</h2>
                             <form className="flex flex-col" onSubmit={handleSubmit}>
-                                <Button type="submit" className="mx-auto">
+                                <Button type="submit" className="mx-auto" buttonClass={undefined}>
                                     Enter
                                 </Button>
                             </form>
