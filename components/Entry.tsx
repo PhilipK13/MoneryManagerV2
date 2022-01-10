@@ -58,7 +58,7 @@ export default function Entry({ entry }) {
             <p className='mx-2'><b>Description:</b> {description}</p>
             <p className='mx-2'><b>Purchaser:</b> {purchaser}</p>
             <p className='mx-2'><b>Recipient:</b> {recipient}</p>
-            <p className='mx-2'><b>Amount:</b> {amount}</p>
+            <p className='mx-2'><b>Amount:</b> ${amount}</p>
         </div>
     )
 }

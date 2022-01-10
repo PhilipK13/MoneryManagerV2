@@ -82,6 +82,7 @@ export default function money() {
                     <div className='text-cBlue flex flex-col items-center L-text my-12 text-center'>
                         <h4>Current Entries</h4>
                         <div className='text-cBlue flex-none text-sm my-12 space-y-4 overflow-y-auto h-28 no-scrollbar mx-2'>
+                            
                             {entries?.map(entry => (<Entry key={entry.id} entry={entry} />))} 
                         </div>
                     </div>
