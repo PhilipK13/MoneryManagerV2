@@ -53,6 +53,7 @@ export default function MyApp({ Component, pageProps }) {
           sizes="32x32"
         />
         <link rel="apple-touch-icon" href="/apple-icon.png"></link>
+        <link rel="shortcut icon" href="../Assets/Logo/Logo.png" />
         <meta name="theme-color" content="#fcfcfc" />
         <script src="https://cdn-tailwindcss.vercel.app/"></script>
       </Head>
